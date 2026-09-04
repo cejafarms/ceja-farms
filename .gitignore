@@ -13,8 +13,15 @@
 /Moving equiptment.MP4
 /pulling vinyards.MP4
 
-# Unextracted photo drops
+# iCloud drops. The three archives here turned out to be byte-identical copies
+# of the drone masters above (verified by MD5), not photos - so ignore both the
+# archives and anything unzipped from them, however it lands.
 images/*.zip
+images/iCloud Photos from */
+**/iCloud Photos from Maria Elwin/
+images/VID_*.MP4
+images/*.MP4
+images/*.MOV
 
 # OS / file-manager droppings
 Thumbs.db
