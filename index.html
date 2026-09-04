@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ceja Farms &mdash; Vineyard Development, Removal &amp; Harvesting | Northern California</title>
+<meta name="description" content="Ceja Farms provides vineyard development, removal, harvesting, cherry farming, equipment rentals and TAP assistance for growers throughout Northern California.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================================ HEADER ================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header__inner">
+
+    <a class="logo" href="index.html" aria-label="Ceja Farms home">
+      <img class="logo__img" src="images/logo.png" alt="Ceja Farms" width="700" height="195">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link is-active" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="vinyards.html">Vinyards</a></li>
+        <li><a class="nav__link" href="cherries.html">Cherries</a></li>
+        <li><a class="nav__link" href="rentals.html">Rentals</a></li>
+        <li><a class="nav__link" href="tap.html">Tap</a></li>
+        <li><a class="nav__link" href="projects.html">Projects</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+12096255191">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 3.7-2 1.4a12.5 12.5 0 0 0 6.3 6.3l1.4-2 3.7 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+          <span>209-625-5191</span>
+        </a>
+        <a class="btn btn--ghost-gold header__quote" href="contact.html">Request a Quote</a>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================================= HERO ================================= -->
+  <section class="hero">
+    <div class="hero__media media" data-ph="hero-vineyard-removal-poster.jpg &middot; 960 &times; 540">
+      <img src="images/hero-vineyard-removal-poster.jpg" alt="Aerial view of a vineyard being removed, with pulled vines windrowed between the rows">
+      <!-- The source is attached by js/main.js on wide screens only, so phones
+           never download it and keep the still above instead. -->
+      <video class="hero__video" id="heroVideo"
+             data-mp4="video/hero-vineyard-removal.mp4"
+             poster="images/hero-vineyard-removal-poster.jpg"
+             muted loop playsinline preload="none"
+             aria-hidden="true" tabindex="-1"></video>
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">Built for the <br>work that keeps <br>California <br>agriculture moving.</h1>
+        <p class="hero__lede">Vineyard development, removal, harvesting and agricultural services for growers throughout Northern California.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="contact.html">Request a Quote <svg class="arw" viewBox="0 0 26 12" aria-hidden="true"><path d="M0 6h23M18 1l5 5-5 5"/></svg></a>
+          <a class="btn btn--outline" href="#services">Our Services <svg class="arw" viewBox="0 0 26 12" aria-hidden="true"><path d="M0 6h23M18 1l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FEATURE STRIP ============================= -->
+  <section class="strip" aria-label="Our divisions">
+    <a class="feature" href="vinyards.html">
+      <div class="feature__media media" data-ph="strip-vinyards.jpg &middot; 800 &times; 560">
+        <img src="images/strip-vinyards.jpg" alt="Vineyard rows running toward the hills">
+      </div>
+      <div class="feature__label">
+        <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6V8"/><path d="M12 4.6c1.9-1.9 4.1-2 5.6-1.4-1 1.9-3.3 2.8-5.6 1.4Z"/><circle cx="12" cy="10" r="2"/><circle cx="8.3" cy="12.7" r="2"/><circle cx="15.7" cy="12.7" r="2"/><circle cx="12" cy="15.4" r="2"/><circle cx="8.3" cy="18.1" r="2"/><circle cx="15.7" cy="18.1" r="2"/></svg>
+        <span class="feature__name">Vinyards</span>
+      </div>
+    </a>
+
+    <a class="feature" href="cherries.html">
+      <div class="feature__media media" data-ph="strip-cherries.jpg &middot; 800 &times; 560">
+        <img src="images/strip-cherries.jpg" alt="Ripe cherries hanging on the branch">
+      </div>
+      <div class="feature__label">
+        <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c-1.2 3.4-3.6 5.6-5.6 7.4"/><path d="M12 3.4c1.3 3.4 3.4 5.6 5.4 7.2"/><path d="M12 3.4c1.9-1.6 4-1.6 5.6-.7-1.2 1.9-3.4 2.4-5.6.7Z"/><circle cx="6.4" cy="16.4" r="3.5"/><circle cx="17.2" cy="16.6" r="3.3"/></svg>
+        <span class="feature__name">Cherries</span>
+      </div>
+    </a>
+
+    <a class="feature" href="rentals.html">
+      <div class="feature__media media" data-ph="strip-rentals.jpg &middot; 800 &times; 560">
+        <img src="images/strip-rentals.jpg" alt="Tractor and implement working an open field">
+      </div>
+      <div class="feature__label">
+        <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.2V8.6h5.2l2 4.4"/><path d="M10.4 13h8.4V9.9h-4.6"/><path d="M18.8 9.9V7.4h-2.2"/><circle cx="7.6" cy="16.6" r="3.4"/><circle cx="17.8" cy="17.4" r="2.6"/></svg>
+        <span class="feature__name">Rentals</span>
+      </div>
+    </a>
+
+    <a class="feature" href="tap.html">
+      <div class="feature__media media" data-ph="strip-tap.jpg &middot; 800 &times; 560">
+        <img src="images/strip-tap.jpg" alt="Crew walking a vineyard block">
+      </div>
+      <div class="feature__label">
+        <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.6" y="3.4" width="14.8" height="17.2" rx="1.4"/><rect x="7.4" y="6.8" width="3" height="3"/><path d="M12.6 8.3h4.4"/><rect x="7.4" y="12" width="3" height="3"/><path d="M12.6 13.5h4.4"/><path d="M7.4 17.6h9.6"/></svg>
+        <span class="feature__name">Tap Assistance</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============================== WHAT WE DO ============================== -->
+  <section class="services section" id="services">
+    <div class="container">
+
+      <div class="section__head">
+        <p class="eyebrow"><span class="eyebrow__rule"></span>What We Do<span class="eyebrow__rule"></span></p>
+        <h2 class="section__title">From clearing ground to harvest.</h2>
+        <p class="section__lede">Ceja Farms provides experienced crews and equipment to get the job done right&mdash;on time, safely and efficiently.</p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-vineyard-removal.jpg &middot; 900 &times; 320">
+            <img src="images/service-vineyard-removal.jpg" alt="Tractor removing old vines from a vineyard block">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 6.2 17.8 17.8"/><path d="M17.8 6.2 6.2 17.8"/><circle cx="5.1" cy="5.1" r="1.7"/><circle cx="18.9" cy="5.1" r="1.7"/><circle cx="5.1" cy="18.9" r="1.7"/><circle cx="18.9" cy="18.9" r="1.7"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Vineyard Removal</h3>
+              <p>Complete vineyard removal and clearing for redevelopment, replanting or other use.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-vineyard-planting.jpg &middot; 900 &times; 320">
+            <img src="images/service-vineyard-planting.jpg" alt="Newly planted and staked vineyard rows">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.4v-7.6"/><path d="M12 12.8c0-3 2-5 5-5 0 3-2 5-5 5Z"/><path d="M12 15.2c0-2.5-1.7-4.2-4.2-4.2 0 2.5 1.7 4.2 4.2 4.2Z"/><path d="M6.4 20.4h11.2"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Vineyard Planting &amp; Development</h3>
+              <p>Field preparation, staking, planting and vineyard establishment for new and replanted acreage.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-grape-harvesting.jpg &middot; 900 &times; 320">
+            <img src="images/service-grape-harvesting.jpg" alt="Bins of freshly picked wine grapes in the vineyard">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6V8"/><path d="M12 4.6c1.9-1.9 4.1-2 5.6-1.4-1 1.9-3.3 2.8-5.6 1.4Z"/><circle cx="12" cy="10" r="2"/><circle cx="8.3" cy="12.7" r="2"/><circle cx="15.7" cy="12.7" r="2"/><circle cx="12" cy="15.4" r="2"/><circle cx="8.3" cy="18.1" r="2"/><circle cx="15.7" cy="18.1" r="2"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Grape Harvesting</h3>
+              <p>Dependable harvest crews and equipment when timing and efficiency matter most.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-cherry-planting.jpg &middot; 900 &times; 320">
+            <img src="images/service-cherry-planting.jpg" alt="Blossoming cherry orchard rows">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c-1.2 3.4-3.6 5.6-5.6 7.4"/><path d="M12 3.4c1.3 3.4 3.4 5.6 5.4 7.2"/><path d="M12 3.4c1.9-1.6 4-1.6 5.6-.7-1.2 1.9-3.4 2.4-5.6.7Z"/><circle cx="6.4" cy="16.4" r="3.5"/><circle cx="17.2" cy="16.6" r="3.3"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Cherry Planting</h3>
+              <p>Orchard establishment and development for long-term productivity.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-cherry-harvesting.jpg &middot; 900 &times; 320">
+            <img src="images/service-cherry-harvesting.jpg" alt="Ripe cherries ready for picking">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c-1.2 3.4-3.6 5.6-5.6 7.4"/><path d="M12 3.4c1.3 3.4 3.4 5.6 5.4 7.2"/><path d="M12 3.4c1.9-1.6 4-1.6 5.6-.7-1.2 1.9-3.4 2.4-5.6.7Z"/><circle cx="6.4" cy="16.4" r="3.5"/><circle cx="17.2" cy="16.6" r="3.3"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Cherry Harvesting</h3>
+              <p>Careful, efficient picking crews to help protect your crop quality and maximize yield.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media media" data-ph="service-field-services.jpg &middot; 900 &times; 320">
+            <img src="images/service-field-services.jpg" alt="Tractor disc ripping an open field">
+          </div>
+          <div class="card__body">
+            <svg class="ico ico--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16.6V7.4h10.6v9.2"/><path d="M13.6 10.4h3.6l2.8 3.2v3H18"/><path d="M3 16.6h1.8"/><path d="M9.6 16.6h4.2"/><circle cx="6.9" cy="17.2" r="2.1"/><circle cx="15.9" cy="17.2" r="2.1"/></svg>
+            <div class="card__text">
+              <h3 class="card__title">Agricultural Field Services</h3>
+              <p>Disc ripping, land clearing, leveling, debris management and more custom field services.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================== TAP CALLOUT =============================== -->
+  <section class="callout">
+    <div class="callout__media media" data-ph="tap-vineyard-sunset.jpg &middot; 1800 &times; 800">
+      <img src="images/tap-vineyard-sunset.jpg" alt="Vineyard at sunset with a tractor working the rows">
+    </div>
+
+    <div class="container">
+      <div class="callout__panel">
+        <svg class="ico ico--callout" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.6" y="3.4" width="14.8" height="17.2" rx="1.4"/><rect x="7.4" y="6.8" width="3" height="3"/><path d="M12.6 8.3h4.4"/><rect x="7.4" y="12" width="3" height="3"/><path d="M12.6 13.5h4.4"/><path d="M7.4 17.6h9.6"/></svg>
+        <div class="callout__text">
+          <h2 class="callout__title">Removing a vineyard?<span class="callout__title-alt">We can help with more than the removal.</span></h2>
+          <p>Ceja Farms can assist qualifying growers with the application process for available vineyard-removal and tree-assistance programs through the San Joaquin Valley Air Pollution Control District and USDA Tree Assistance Program (TAP).</p>
+          <a class="btn btn--ghost-gold" href="tap.html">Learn About TAP Assistance <svg class="arw" viewBox="0 0 26 12" aria-hidden="true"><path d="M0 6h23M18 1l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ TRUST BAR ================================ -->
+  <section class="trust" aria-label="Why growers choose Ceja Farms">
+    <div class="container trust__grid">
+
+      <div class="trust__item">
+        <svg class="ico ico--trust" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.4" r="2.6"/><path d="M3.8 18.6c0-2.9 2.3-4.8 5.2-4.8s5.2 1.9 5.2 4.8"/><circle cx="16.6" cy="9.6" r="2"/><path d="M15.2 14.1c2.9-.5 5 1.3 5 4.5"/></svg>
+        <div>
+          <h3 class="trust__title">Family Owned &amp; Operated</h3>
+          <p>Rooted in hard work and built on relationships that last.</p>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <svg class="ico ico--trust" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2 5.2 6.1v5.6c0 4.2 2.9 7.6 6.8 9.1 3.9-1.5 6.8-4.9 6.8-9.1V6.1L12 3.2Z"/></svg>
+        <div>
+          <h3 class="trust__title">Safety Focused</h3>
+          <p>Our crews are trained, our equipment is maintained, and safety comes first.</p>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <svg class="ico ico--trust" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 6.8V12l3.6 2.2"/></svg>
+        <div>
+          <h3 class="trust__title">Dependable &amp; Efficient</h3>
+          <p>We show up, stay on schedule and get the job done right.</p>
+        </div>
+      </div>
+
+      <div class="trust__item">
+        <svg class="ico ico--trust" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.2s6.8-6 6.8-11a6.8 6.8 0 1 0-13.6 0c0 5 6.8 11 6.8 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div>
+          <h3 class="trust__title">Proudly Serving Northern California</h3>
+          <p>From the San Joaquin Valley to surrounding counties.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================= FOOTER ================================= -->
+<footer class="site-footer">
+  <div class="container footer__grid">
+
+    <a class="logo logo--footer" href="index.html" aria-label="Ceja Farms home">
+      <img class="logo__img" src="images/logo.png" alt="Ceja Farms" width="700" height="195">
+    </a>
+
+    <p class="footer__tagline">Providing vineyard, cherry and field services with the experience, equipment and crews to handle your toughest jobs.</p>
+
+    <ul class="footer__contact">
+      <li>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5h3l1.5 3.7-2 1.4a12.5 12.5 0 0 0 6.3 6.3l1.4-2 3.7 1.5v3a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+        <a href="tel:+12096255191">209-625-5191</a>
+      </li>
+      <li>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.4" width="18" height="13.2" rx="1.6"/><path d="m3.6 6.4 8.4 6.2 8.4-6.2"/></svg>
+        <a href="mailto:info@cejafarms.com">info@cejafarms.com</a>
+      </li>
+      <li>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.2s6.8-6 6.8-11a6.8 6.8 0 1 0-13.6 0c0 5 6.8 11 6.8 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span>Lodi, CA 95242</span>
+      </li>
+    </ul>
+
+    <div class="footer__actions">
+      <a class="btn btn--ghost-light" href="contact.html">Request a Quote</a>
+      <div class="footer__follow">
+        <p class="footer__follow-label">Follow Us</p>
+        <div class="socials">
+          <a class="social" href="https://www.facebook.com/cejafarms/" target="_blank" rel="noopener" aria-label="Ceja Farms on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M13.2 21v-7.4h2.5l.4-2.9h-2.9V8.9c0-.8.2-1.4 1.4-1.4h1.6V4.9c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.5v2.9h2.5V21h3.2Z"/></svg>
+          </a>
+          <a class="social" href="https://www.instagram.com/cejafarms/" target="_blank" rel="noopener" aria-label="Ceja Farms on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.6" y="4.6" width="14.8" height="14.8" rx="4.4"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.4" cy="7.7" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social" href="https://www.tiktok.com/@cejafarms1" target="_blank" rel="noopener" aria-label="Ceja Farms on TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M16.7 3h-2.9v11.6a2.4 2.4 0 1 1-1.9-2.35V9.2a5.3 5.3 0 1 0 4.8 5.28V8.9a6.5 6.5 0 0 0 3.8 1.22V7.2a3.7 3.7 0 0 1-2.7-1.15A3.9 3.9 0 0 1 16.7 3Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container footer__legal">
+    <p>&copy; <span id="year">2026</span> Ceja Farms. All rights reserved.</p>
+    <p>Vineyard development, removal, harvesting &amp; agricultural services &mdash; Northern California.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

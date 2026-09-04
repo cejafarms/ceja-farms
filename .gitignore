@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------------------
+# Ceja Farms — what stays out of the repo
+#
+# The site itself (HTML/CSS/JS, images/, video/) IS tracked, because those are
+# the files that get deployed. What's excluded below is source material and
+# machine cruft.
+# ---------------------------------------------------------------------------
+
+# Raw camera/drone masters. The web-ready encodes in /video are committed; these
+# ~47 MB originals are the inputs they were cut from. Keep them backed up
+# somewhere else. To track one anyway: git add -f "pulling vinyards.MP4"
+/Moving debree.MP4
+/Moving equiptment.MP4
+/pulling vinyards.MP4
+
+# Unextracted photo drops
+images/*.zip
+
+# OS / file-manager droppings
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Tooling, if it ever lands here
+node_modules/
+npm-debug.log*
+.env
+.env.local
