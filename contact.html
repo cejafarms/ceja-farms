@@ -84,7 +84,24 @@
 
       <!-- ------------------------------ Form ------------------------------ -->
       <div>
-        <form class="form" id="quoteForm" novalidate>
+        <!-- Netlify detects this form by scanning the static HTML at deploy time,
+             so the name/data-netlify attributes and the hidden form-name input
+             must live in the markup even though JS submits it via fetch(). -->
+        <form class="form" id="quoteForm"
+              name="quote-request"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              novalidate>
+
+          <input type="hidden" name="form-name" value="quote-request">
+
+          <p class="visually-hidden" aria-hidden="true">
+            <label>Leave this field empty if you&rsquo;re human:
+              <input name="bot-field" tabindex="-1" autocomplete="off">
+            </label>
+          </p>
+
           <h2 class="form__title">Request a Quote</h2>
           <p class="form__intro">Fill in a few details and we&rsquo;ll be in touch. Fields marked <span class="req">*</span> are required.</p>
 
@@ -137,7 +154,7 @@
             <textarea id="message" name="message" placeholder="Tell us about the block, the timing you're working with, and anything else we should know."></textarea>
           </div>
 
-          <button class="btn btn--solid" type="submit">Send Request <svg class="arw" viewBox="0 0 26 12" aria-hidden="true"><path d="M0 6h23M18 1l5 5-5 5"/></svg></button>
+          <button class="btn btn--solid" id="quoteSubmit" type="submit">Send Request <svg class="arw" viewBox="0 0 26 12" aria-hidden="true"><path d="M0 6h23M18 1l5 5-5 5"/></svg></button>
 
           <p class="form__status" id="formStatus" hidden role="status"></p>
 

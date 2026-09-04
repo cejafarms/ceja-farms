@@ -142,18 +142,24 @@
   }
 
   /* --------------------------- 6. Quote request form ---------------------------
-     The site is static, so there is no server to post to. Until a form backend is
-     wired up (Formspree, Netlify Forms, Basin, …) this hands the details to the
-     visitor's mail app, pre-addressed and pre-filled. To switch to a real backend,
-     give the <form> an action + method and delete this block.
+     Submits to Netlify Forms over fetch() so the visitor stays on the page — no
+     mail client, no full reload. Netlify registers the form by scanning the
+     static markup at deploy time (name + data-netlify + the hidden form-name
+     input), so this script only handles the transport and the confirmation.
+
+     With JS off, the form still posts normally and Netlify shows its own
+     success page, so the fallback path stays intact.
   --------------------------------------------------------------------------- */
   var form = document.getElementById('quoteForm');
   if (form) {
     var status = document.getElementById('formStatus');
+    var submitBtn = document.getElementById('quoteSubmit');
 
-    var say = function (msg) {
+    var say = function (msg, kind) {
       if (!status) return;
       status.textContent = msg;
+      status.classList.remove('form__status--ok', 'form__status--err');
+      if (kind) status.classList.add('form__status--' + kind);
       status.hidden = false;
     };
 
@@ -165,30 +171,31 @@
         return;
       }
 
-      var val = function (id) {
-        var el = document.getElementById(id);
-        return el && el.value ? el.value.trim() : '';
-      };
+      var label = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
 
-      var lines = [
-        'Name: ' + val('name'),
-        'Phone: ' + val('phone'),
-        'Email: ' + val('email'),
-        'Location: ' + val('location'),
-        'Service: ' + val('service'),
-        'Acreage: ' + val('acreage'),
-        '',
-        'Details:',
-        val('message')
-      ];
-
-      var subject = 'Quote request' + (val('service') ? ' — ' + val('service') : '');
-      var href = 'mailto:info@cejafarms.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\n'));
-
-      window.location.href = href;
-      say('Opening your email app with these details ready to send. If nothing happens, email info@cejafarms.com or call 209-625-5191.');
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          say('Thanks — your request is in. We’ll be in touch shortly. If it’s urgent, call 209-625-5191.', 'ok');
+        })
+        .catch(function () {
+          say('Sorry, that didn’t go through. Please call 209-625-5191 or email info@cejafarms.com and we’ll get right on it.', 'err');
+        })
+        .then(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = label;
+          }
+        });
     });
   }
 })();
