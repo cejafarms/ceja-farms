@@ -47,22 +47,25 @@ originals kept in the project root, git-ignored):
 **Frames pulled from the drone and phone footage** (the masters are in the
 project root, git-ignored). These are cut from 960×540–1280×720 video, so they
 are soft on high-DPI screens — replacing any of them with a real camera file
-under the same name is a straight upgrade:
+under the same name is a straight upgrade.
+
+The `pulling vinyards.MP4` stills were pulled from the site on 8 Sep 2026: at
+hero size they were a 2.5× upscale and looked grainy. Anything cut from a
+960×540 master and blown up to a 2400×1000 banner will have the same problem —
+`about-hero.jpg` is the one that still does.
 
 | File | Source clip | Used on |
 |---|---|---|
-| `hero-vineyard-removal.jpg` | pulling vinyards | Home — hero |
-| `vineyard-hero.jpg` | pulling vinyards | Vinyards — page hero |
-| `tap-hero.jpg`, `tap-what-is.jpg`, `tap-eligible-bg.jpg` | pulling vinyards / Moving debree | Tap |
-| `tap-vineyard-sunset.jpg` | pulling vinyards | Home + Vinyards — TAP callout |
-| `about-hero.jpg`, `about-band-bg.jpg` | Moving debree / pulling vinyards | About |
-| `projects-hero.jpg`, `projects-cta.jpg` | pulling vinyards / Moving debree | Projects |
+| `home-hero.jpg` | Moving equiptment | Home — hero |
+| `tap-what-is.jpg`, `tap-eligible-bg.jpg` | Moving debree | Tap |
+| `about-hero.jpg` | Moving debree | About |
+| `projects-cta.jpg` | Moving debree | Projects |
 | `rentals-hero.jpg`, `rentals-project.jpg` | Moving equiptment | Rentals |
 | `contact-hero.jpg` | Moving equiptment | Contact |
 | `gallery-5.jpg` | Moving debree | Vinyards — photo strip |
 | `cherry-gallery-3..5.jpg`, `tap-orchard.jpg` | cherry harvest clips | Cherries |
 | `cherry-harvest-poster.jpg` | cherry harvest clip | Cherries — video poster |
-| `community-lodi-parade-poster.jpg`, `community-harvest-crews-poster.jpg` | community clips | Home — video posters |
+| `community-lodi-parade-poster.jpg` | parade clip | Home — video poster |
 
 ---
 
@@ -70,6 +73,20 @@ under the same name is a straight upgrade:
 
 Until these land, the cards they belong to show as text cards (or, for
 `about-crew.jpg`, a warm gradient panel). Nothing looks broken without them.
+
+### Page heroes and backgrounds
+
+These sit empty and take the brand gradient (or, for the stat band, simply
+disappear). They read as intentional, so there is no rush — but a real photo
+in any of these slots is the biggest single upgrade available.
+
+| Filename | Size | Ratio | Subject |
+|---|---|---|---|
+| `vineyard-hero.jpg` | 2400 × 1000 | 12:5 | Vineyard work at golden hour; subject right of centre |
+| `tap-hero.jpg` | 2400 × 1000 | 12:5 | Vines being pulled; subject right of centre |
+| `projects-hero.jpg` | 2400 × 1000 | 12:5 | A finished job; subject right of centre |
+| `tap-vineyard-sunset.jpg` | 1800 × 800 | 9:4 | Vineyard at sunset. The left ~45% sits under the dark panel, so keep the subject to the right. Used on Home + Vinyards. |
+| `about-band-bg.jpg` | 1800 × 600 | 3:1 | Any wide field shot — sits at low opacity behind the stat band |
 
 ### Home — service cards
 Photographed as a set: all four are needed before *any* of the six service

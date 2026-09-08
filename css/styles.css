@@ -2113,6 +2113,9 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
 
 .community__clip { margin: 0; width: 168px; }
 
+/* A single clip has room to breathe. */
+.community__clips:has(> :only-child) .community__clip { width: 216px; }
+
 .community__clip video {
   display: block;
   width: 100%;
