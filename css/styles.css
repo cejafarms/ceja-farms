@@ -711,47 +711,75 @@ h1, h2, h3 { margin: 0 0 .5em; }
   color: rgba(233, 230, 224, .5);
 }
 
-/* ======================= 12. IMAGE PLACEHOLDERS ======================= */
-/* Base .media rules live in section 3 so component overrides (the absolutely
-   positioned hero/callout backgrounds) win the cascade. */
-/* A photo slot waiting on its picture. Reads as an intentional branded panel
-   rather than a broken image: warm paper gradient, hairline frame, and the
-   wordmark set quietly in the middle at a size relative to the slot itself.
-   The expected filename stays in data-ph for reference — add the class
-   "show-slots" to <body> to surface those labels while dropping photos in. */
-.media.is-placeholder {
-  container-type: inline-size;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(115% 130% at 28% 18%, #f2ede2 0%, #e8e0ce 58%, #ded4be 100%);
-  box-shadow:
-    inset 0 0 0 1px rgba(120, 104, 76, .16),
-    inset 0 0 0 7px rgba(255, 255, 255, .25);
-}
+/* ======================= 12. EMPTY PHOTO SLOTS ======================= */
+/* Nothing here draws a "placeholder". A slot whose photo hasn't landed yet
+   either disappears entirely (content photos — cards, galleries, photo
+   grids, texture overlays) or becomes a brand-toned surface that reads as
+   part of the page (the big background bands, where something has to sit
+   behind the copy).
+
+   Drop the real photo into /images using the filename in data-ph and the
+   slot comes back on its own — no markup changes. Add the class
+   "show-slots" to <body> to light the empty ones up while you work.
+   Base .media rules live in section 3 so component overrides (the
+   absolutely positioned hero/callout backgrounds) win the cascade. */
+.media.is-placeholder { background: transparent; }
 .media.is-placeholder img { display: none; }
 
-.media.is-placeholder::before {
-  content: "Ceja Farms";
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-variant-caps: small-caps;
-  font-size: clamp(12px, 9cqw, 44px);
-  letter-spacing: .07em;
-  line-height: 1;
-  white-space: nowrap;
-  color: rgba(109, 93, 66, .2);
-  user-select: none;
+/* --- Content photos: the slot goes away --- */
+.gallery__item.is-placeholder,
+.photo-grid .media.is-placeholder,
+.owner__photo.is-placeholder,
+.statband__bg.is-placeholder,
+.eligible__bg.is-placeholder,
+.card__media.is-placeholder,
+.project__media.is-placeholder { display: none; }
+
+/* Card and project photos are dropped as a set, so a row never ends up half
+   photographed and half not — the cards simply read as text cards until the
+   whole set is shot. */
+.cards:has(.card__media.is-placeholder) .card__media,
+.projects__grid:has(.project__media.is-placeholder) .project__media { display: none; }
+
+/* --- Background bands: a brand-toned surface instead of a photo --- */
+.hero__media.is-placeholder,
+.page-hero__media.is-placeholder,
+.split__media.is-placeholder {
+  background:
+    radial-gradient(120% 120% at 78% 22%, rgba(212, 162, 76, .20) 0%, rgba(212, 162, 76, 0) 58%),
+    linear-gradient(112deg, var(--cream) 0%, var(--cream-deep) 44%, #ded2b8 74%, #cdbf9f 100%);
 }
 
-/* Filename + expected size: hidden unless <body class="show-slots"> */
-.media.is-placeholder::after {
+/* The callout sits on black with a dark panel over it; keep it dark. */
+.callout__media.is-placeholder {
+  background:
+    radial-gradient(120% 130% at 82% 18%, rgba(212, 162, 76, .22) 0%, rgba(212, 162, 76, 0) 62%),
+    linear-gradient(112deg, var(--black) 0%, #1e1c18 52%, #2b261c 100%);
+}
+
+/* Feature-strip tiles carry white type over a bottom scrim, so they need a
+   dark tile rather than a light one. */
+.feature__media.is-placeholder {
+  background: linear-gradient(158deg, #2c2720 0%, #1a1714 100%);
+}
+
+/* Layout compensation: where a hidden slot would otherwise leave a hole,
+   the surviving content takes the whole width. */
+.drives__grid:has(.photo-grid .media.is-placeholder) { grid-template-columns: minmax(0, 1fr); }
+.owner__grid:has(.owner__photo.is-placeholder) { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+
+/* --- Working view: <body class="show-slots"> labels what's still missing --- */
+.show-slots .media.is-placeholder,
+.show-slots .cards:has(.card__media.is-placeholder) .card__media.is-placeholder,
+.show-slots .projects__grid:has(.project__media.is-placeholder) .project__media.is-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 60px;
+  background: repeating-linear-gradient(45deg, #ece7dc 0 8px, #e2dacb 8px 16px);
+  box-shadow: inset 0 0 0 1px rgba(120, 104, 76, .3);
+}
+.show-slots .media.is-placeholder::after {
   content: attr(data-ph);
-  display: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 8px;
   padding: 0 10px;
   font-family: var(--font-body);
   font-size: 11.5px;
@@ -759,9 +787,8 @@ h1, h2, h3 { margin: 0 0 .5em; }
   letter-spacing: .03em;
   line-height: 1.4;
   text-align: center;
-  color: rgba(107, 92, 64, .8);
+  color: rgba(107, 92, 64, .9);
 }
-.show-slots .media.is-placeholder::after { display: block; }
 
 /* =========================================================================
    INTERIOR PAGE COMPONENTS
@@ -1978,26 +2005,12 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
 .page-cherry .card--tall .card__media { aspect-ratio: 16 / 9; }
 
 /* ============================== VIDEO ==============================
-   Hero background video. Sits inside .hero__media (below the scrim) and is
-   only given a <source> by main.js on wide screens — see js/main.js — so
-   phones never download it and fall back to the poster/photo instead.
+   Inline feature videos. The hero is a still photograph (no background
+   video), so the only <video> elements left are the click-to-play blocks
+   below -- they never autoplay and never download until asked.
    ================================================================= */
-.hero__video {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity .9s var(--ease);
-  pointer-events: none;
-}
-.hero__video.is-playing { opacity: 1; }
 
-/* The drone footage is flat and dusty straight off the camera — a light lift,
-   applied to the video and its still fallback so both match. */
-.hero__video,
+/* The drone footage is flat and dusty straight off the camera -- a light lift. */
 .hero__media img {
   filter: contrast(1.1) saturate(1.18) brightness(.98);
 }
@@ -2039,10 +2052,83 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
   background: #000;
 }
 
+.videoblock__copy .videoblock__note,
 .videoblock__note {
   margin: 12px 0 0;
   font-size: 12.8px;
   color: var(--ink-muted);
+}
+
+/* Portrait modifier — phone footage stays phone-shaped instead of being
+   cropped into the 16:9 frame the landscape clips use. */
+.videoblock--portrait .videoblock__inner {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+}
+.videoblock--portrait .videoblock__player {
+  max-width: 340px;
+  margin-inline: auto;
+}
+.videoblock--portrait .videoblock__player video {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
+/* ------------------------- Community footnote -------------------------
+   A short band above the footer on the home page. Two vertical clips,
+   click-to-play like every other video on the site — preload="none", so
+   nothing downloads unless a visitor asks for it.
+   -------------------------------------------------------------------- */
+.community {
+  background: var(--black-soft);
+  border-top: 1px solid var(--line-dark);
+  padding: 56px 0 60px;
+  color: rgba(233, 230, 224, .78);
+}
+
+.community__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 44px;
+  align-items: center;
+}
+
+.community__title {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.community__copy p:last-child {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.community__clips { display: flex; gap: 18px; }
+
+.community__clip { margin: 0; width: 168px; }
+
+.community__clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: #000;
+  border: 1px solid var(--line-dark);
+  border-radius: var(--radius);
+}
+
+.community__clip figcaption {
+  margin-top: 9px;
+  font-size: 12.2px;
+  line-height: 1.45;
+  color: rgba(233, 230, 224, .58);
 }
 
 /* --------------------------- Footer follow --------------------------- */
@@ -2348,10 +2434,23 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
 
 /* --- Video --- */
 @media (max-width: 960px) {
-  .videoblock__inner { grid-template-columns: 1fr; gap: 28px; }
+  .videoblock__inner,
+  .videoblock--portrait .videoblock__inner { grid-template-columns: 1fr; gap: 28px; }
+  .videoblock--portrait .videoblock__player { max-width: 300px; margin-inline: 0; }
 }
 @media (max-width: 620px) {
   .videoblock { padding: 48px 0 52px; }
+  .videoblock--portrait .videoblock__player { max-width: none; }
+}
+
+/* --- Community footnote --- */
+@media (max-width: 960px) {
+  .community__inner { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 620px) {
+  .community { padding: 44px 0 48px; }
+  .community__clips { gap: 14px; }
+  .community__clip { width: auto; flex: 1 1 0; }
 }
 
 /* --- Motion preferences --- */

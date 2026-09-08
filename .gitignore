@@ -7,11 +7,19 @@
 # ---------------------------------------------------------------------------
 
 # Raw camera/drone masters. The web-ready encodes in /video are committed; these
-# ~47 MB originals are the inputs they were cut from. Keep them backed up
+# ~215 MB originals are the inputs they were cut from. Keep them backed up
 # somewhere else. To track one anyway: git add -f "pulling vinyards.MP4"
 /Moving debree.MP4
 /Moving equiptment.MP4
 /pulling vinyards.MP4
+/1B268E17-57C9-4473-AD55-2C1DEB57E605.MOV
+/4BEF4FF1-90B5-4CB0-86B0-5728DD11260C.MOV
+/D2986A9B-B1FB-4F7F-AFAB-A975406999DA.MOV
+
+# Phone photos emailed in on 8 Sep 2026. The crops cut from them live in
+# /images under their slot names; these full-size originals stay out.
+/IMG_3025.jpeg
+/IMG_3028.jpeg
 
 # iCloud drops. The three archives here turned out to be byte-identical copies
 # of the drone masters above (verified by MD5), not photos - so ignore both the

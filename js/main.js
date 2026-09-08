@@ -3,9 +3,8 @@
    1. Mobile navigation drawer
    2. Missing-image placeholders
    3. Footer year
-   4. Hero background video (wide screens only)
-   5. Project category filter
-   6. Quote request form
+   4. Project category filter
+   5. Quote request form
    ========================================================================= */
 (function () {
   'use strict';
@@ -68,50 +67,7 @@
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  /* --------------------------- 4. Hero background video ---------------------------
-     The <video> ships with no <source>, so nothing downloads until we decide it's
-     worth it. We attach the source only after the page has loaded, and only when:
-       - the viewport is wide enough that a background video earns its bandwidth
-       - the visitor hasn't asked for reduced motion
-       - the browser isn't reporting Save-Data / a 2g-class connection
-     Everywhere else the poster image underneath simply stays put.
-  ------------------------------------------------------------------------------ */
-  var hero = document.getElementById('heroVideo');
-  if (hero) {
-    var mq = function (q) {
-      return window.matchMedia ? window.matchMedia(q).matches : false;
-    };
-    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    var thrifty = !!(conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '')));
-
-    var startHeroVideo = function () {
-      if (!mq('(min-width: 781px)') || mq('(prefers-reduced-motion: reduce)') || thrifty) return;
-
-      var mp4 = hero.getAttribute('data-mp4');
-      if (!mp4 || hero.querySelector('source')) return;
-
-      var src = document.createElement('source');
-      src.src = mp4;
-      src.type = 'video/mp4';
-      hero.appendChild(src);
-      hero.load();
-
-      hero.addEventListener('playing', function () {
-        hero.classList.add('is-playing');
-      });
-
-      var attempt = hero.play();
-      if (attempt && attempt.catch) {
-        // Autoplay refused (some power-saving modes): leave the poster showing.
-        attempt.catch(function () {});
-      }
-    };
-
-    if (document.readyState === 'complete') startHeroVideo();
-    else window.addEventListener('load', startHeroVideo);
-  }
-
-  /* ------------------------ 5. Project category filter ------------------------ */
+  /* ------------------------ 4. Project category filter ------------------------ */
   var grid = document.getElementById('projectGrid');
   if (grid) {
     var buttons = document.querySelectorAll('.filter');
@@ -141,7 +97,7 @@
     });
   }
 
-  /* --------------------------- 6. Quote request form ---------------------------
+  /* --------------------------- 5. Quote request form ---------------------------
      Submits to Netlify Forms over fetch() so the visitor stays on the page — no
      mail client, no full reload. Netlify registers the form by scanning the
      static markup at deploy time (name + data-netlify + the hidden form-name

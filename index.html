@@ -63,15 +63,9 @@
 
   <!-- ================================= HERO ================================= -->
   <section class="hero">
-    <div class="hero__media media" data-ph="hero-vineyard-removal-poster.jpg &middot; 960 &times; 540">
-      <img src="images/hero-vineyard-removal-poster.jpg" alt="Aerial view of a vineyard being removed, with pulled vines windrowed between the rows">
-      <!-- The source is attached by js/main.js on wide screens only, so phones
-           never download it and keep the still above instead. -->
-      <video class="hero__video" id="heroVideo"
-             data-mp4="video/hero-vineyard-removal.mp4"
-             poster="images/hero-vineyard-removal-poster.jpg"
-             muted loop playsinline preload="none"
-             aria-hidden="true" tabindex="-1"></video>
+    <div class="hero__media media">
+      <img src="images/hero-vineyard-removal.jpg" width="1920" height="1080" fetchpriority="high"
+           alt="Aerial view of a vineyard being removed, with pulled vines windrowed between the rows">
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
 
@@ -101,7 +95,7 @@
 
     <a class="feature" href="cherries.html">
       <div class="feature__media media" data-ph="strip-cherries.jpg &middot; 800 &times; 560">
-        <img src="images/strip-cherries.jpg" alt="Ripe cherries hanging on the branch">
+        <img src="images/strip-cherries.jpg" alt="Bins of freshly picked cherries at the edge of the orchard">
       </div>
       <div class="feature__label">
         <svg class="ico ico--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c-1.2 3.4-3.6 5.6-5.6 7.4"/><path d="M12 3.4c1.3 3.4 3.4 5.6 5.4 7.2"/><path d="M12 3.4c1.9-1.6 4-1.6 5.6-.7-1.2 1.9-3.4 2.4-5.6.7Z"/><circle cx="6.4" cy="16.4" r="3.5"/><circle cx="17.2" cy="16.6" r="3.3"/></svg>
@@ -227,7 +221,7 @@
   <!-- =============================== TAP CALLOUT =============================== -->
   <section class="callout">
     <div class="callout__media media" data-ph="tap-vineyard-sunset.jpg &middot; 1800 &times; 800">
-      <img src="images/tap-vineyard-sunset.jpg" alt="Vineyard at sunset with a tractor working the rows">
+      <img src="images/tap-vineyard-sunset.jpg" alt="Aerial view of a vineyard block being pulled row by row">
     </div>
 
     <div class="container">
@@ -276,6 +270,43 @@
           <h3 class="trust__title">Proudly Serving Northern California</h3>
           <p>From the San Joaquin Valley to surrounding counties.</p>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================ COMMUNITY FOOTNOTE ============================ -->
+  <section class="community" aria-labelledby="communityTitle">
+    <div class="container community__inner">
+
+      <div class="community__copy">
+        <p class="eyebrow eyebrow--gold">In the Community<span class="eyebrow__rule"></span></p>
+        <h2 class="community__title" id="communityTitle">Rooted in Lodi.</h2>
+        <p>Ceja Farms is a family business and Lodi is home. Between seasons you&rsquo;ll find our trucks, trailers and crews around town&mdash;helping a local school build its Christmas parade float, and putting local hands to work through cherry harvest.</p>
+      </div>
+
+      <div class="community__clips">
+        <figure class="community__clip">
+          <video controls preload="none" playsinline
+                 poster="images/community-lodi-parade-poster.jpg"
+                 width="608" height="1080"
+                 aria-label="Decorating a Christmas parade float and truck for a local school">
+            <source src="video/community-lodi-parade.mp4" type="video/mp4">
+            Your browser can&rsquo;t play this video. <a href="video/community-lodi-parade.mp4">Download it instead</a>.
+          </video>
+          <figcaption>Building the Christmas parade float</figcaption>
+        </figure>
+
+        <figure class="community__clip">
+          <video controls preload="none" playsinline
+                 poster="images/community-harvest-crews-poster.jpg"
+                 width="608" height="1080"
+                 aria-label="Tractor hauling bins of freshly picked cherries past the harvest crew">
+            <source src="video/community-harvest-crews.mp4" type="video/mp4">
+            Your browser can&rsquo;t play this video. <a href="video/community-harvest-crews.mp4">Download it instead</a>.
+          </video>
+          <figcaption>Local crews through cherry harvest</figcaption>
+        </figure>
       </div>
 
     </div>
