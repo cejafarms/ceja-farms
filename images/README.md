@@ -44,6 +44,29 @@ originals kept in the project root, git-ignored):
 | `strip-cherries.jpg` | Home — feature strip |
 | `cherry-gallery-1.jpg`, `cherry-gallery-2.jpg` | Cherries — photo strip |
 
+**From the six hero images supplied 10 Sep 2026** (`About Hero.png`,
+`Contact Us Hero.png`, `Our Projects Hero.png`, `Rentals Hero.png`,
+`Vinyard Services Hero.png`, `Removal Hero.png` — originals in the project
+root, git-ignored). They replaced the drone and video frames that used to sit
+in these slots.
+
+Five of them are **portrait (1145 × 1374)**, not the 2400 × 1000 the heroes
+were designed for, so they are shipped uncropped and a per-file
+`object-position` rule in `css/styles.css` ("Which band of each hero photo
+shows") picks the strip visible on desktop and in the 250px phone band.
+Replacing one with a new photo? Re-check that rule too. At 1145px wide they
+are softer than a 2400px original on large or high-DPI screens — wider
+originals under the same names would be a straight upgrade.
+
+| File | Source | Used on |
+|---|---|---|
+| `about-hero.jpg` | About Hero | About — page hero |
+| `contact-hero.jpg` | Contact Us Hero | Contact — page hero |
+| `projects-hero.jpg` | Our Projects Hero | Projects — page hero |
+| `rentals-hero.jpg` | Rentals Hero | Rentals — page hero |
+| `vineyard-hero.jpg` | Vinyard Services Hero | Vinyards — page hero |
+| `tap-hero.jpg` (1536 × 1024) | Removal Hero | Tap — page hero |
+
 **From the two drone flights added 10 Sep 2026** (`VID_20260906_11453300.MP4`
 — midday vineyard flyover ending over the Ceja Farms yard; `VID_20260909_07112300.MP4`
 — sunrise, tractor on the road between young cherry orchards. Masters in the
@@ -52,11 +75,8 @@ project root, git-ignored):
 | File | Source | Used on |
 |---|---|---|
 | `home-hero.jpg` (1920 × 1080) | Sunrise road, 1.5 s | Home — hero still. It is the exact first frame of `video/home-hero-loop.mp4`, which plays over it — re-cut both together or the fade-in will jump. |
-| `vineyard-hero.jpg` | Flyover, 19 s | Vinyards — page hero |
-| `about-hero.jpg` | Flyover, 29.5 s (the yard) | About — page hero |
 | `about-band-bg.jpg` | Flyover, 21 s | About — stat band |
 | `vineyard-flyover-poster.jpg` | Flyover, 20 s | About — video poster |
-| `projects-hero.jpg` | Sunrise road, 33 s | Projects — page hero |
 | `ch-planting.jpg` | Sunrise road, 7 s | Cherries — solution card (shows once the other three cherry cards land) |
 
 **Frames pulled from the earlier drone and phone footage** (the masters are in the
@@ -67,15 +87,14 @@ under the same name is a straight upgrade.
 The `pulling vinyards.MP4` stills were pulled from the site on 8 Sep 2026: at
 hero size they were a 2.5× upscale and looked grainy. Anything cut from a
 960×540 master and blown up to a 2400×1000 banner will have the same problem.
-The 10 Sep heroes above come from 1280×720 masters (a 1.9× upscale), the same
-grade as the Rentals and Contact heroes.
+(The page heroes cut from drone and video footage were all replaced on 10 Sep
+2026 by the supplied hero images above; only the Home hero is still video.)
 
 | File | Source clip | Used on |
 |---|---|---|
 | `tap-what-is.jpg`, `tap-eligible-bg.jpg` | Moving debree | Tap |
 | `projects-cta.jpg` | Moving debree | Projects |
-| `rentals-hero.jpg`, `rentals-project.jpg` | Moving equiptment | Rentals |
-| `contact-hero.jpg` | Moving equiptment | Contact |
+| `rentals-project.jpg` | Moving equiptment | Rentals |
 | `gallery-5.jpg` | Moving debree | Vinyards — photo strip |
 | `cherry-gallery-3..5.jpg`, `tap-orchard.jpg` | cherry harvest clips | Cherries |
 | `cherry-harvest-poster.jpg` | cherry harvest clip | Cherries — video poster |
@@ -96,7 +115,6 @@ in any of these slots is the biggest single upgrade available.
 
 | Filename | Size | Ratio | Subject |
 |---|---|---|---|
-| `tap-hero.jpg` | 2400 × 1000 | 12:5 | Vines being pulled; subject right of centre |
 | `tap-vineyard-sunset.jpg` | 1800 × 800 | 9:4 | Vineyard at sunset. The left ~45% sits under the dark panel, so keep the subject to the right. Used on Home + Vinyards. |
 
 ### Home — service cards

@@ -24,6 +24,15 @@
 /IMG_3025.jpeg
 /IMG_3028.jpeg
 
+# Page-hero images supplied 10 Sep 2026. Converted to web JPGs in /images
+# under their slot names (about-hero.jpg etc.); the ~15 MB PNG originals stay out.
+/About Hero.png
+/Contact Us Hero.png
+/Our Projects Hero.png
+/Removal Hero.png
+/Rentals Hero.png
+/Vinyard Services Hero.png
+
 # iCloud drops. The three archives here turned out to be byte-identical copies
 # of the drone masters above (verified by MD5), not photos - so ignore both the
 # archives and anything unzipped from them, however it lands.

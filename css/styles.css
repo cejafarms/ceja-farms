@@ -818,6 +818,18 @@ h1, h2, h3 { margin: 0 0 .5em; }
     rgba(244, 241, 234, 0) 62%
   );
 }
+/* Which band of each hero photo shows. Most of these sources are portrait
+   (1145 × 1374), far taller than the wide desktop hero, so object-fit: cover
+   keeps only a horizontal strip — these pick the strip. Keyed on filename so
+   replacing a photo never needs a markup change. The same value also frames
+   the 250px band on phones. */
+.page-hero__media img[src$="about-hero.jpg"]    { object-position: 50% 30%; }
+.page-hero__media img[src$="contact-hero.jpg"]  { object-position: 50% 34%; }
+.page-hero__media img[src$="projects-hero.jpg"] { object-position: 50% 52%; }
+.page-hero__media img[src$="rentals-hero.jpg"]  { object-position: 50% 38%; }
+.page-hero__media img[src$="vineyard-hero.jpg"] { object-position: 50% 26%; }
+.page-hero__media img[src$="tap-hero.jpg"]      { object-position: 50% 30%; }
+
 .page-hero__inner { position: relative; z-index: 2; width: 100%; }
 .page-hero__content { max-width: 600px; padding: 54px 0; }
 
