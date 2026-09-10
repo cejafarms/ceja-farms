@@ -64,10 +64,19 @@
   <!-- ================================= HERO ================================= -->
   <section class="hero">
     <div class="hero__media media">
-      <img src="images/home-hero.jpg" width="2400" height="1000" fetchpriority="high"
-           alt="Tractor, grinder and skid steer working a cleared block with pulled vines stacked along the road">
+      <img src="images/home-hero.jpg" width="1920" height="1080" fetchpriority="high"
+           alt="Tractor heading down a farm road at sunrise between young cherry orchards">
+      <!-- Silent drone loop over the still above. main.js only attaches the
+           sources for visitors without reduced-motion or data-saver on. -->
+      <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+        <source data-src="video/home-hero-loop.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
+    <button class="hero__motion" type="button" aria-label="Pause background video" hidden>
+      <svg class="hero__motion-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5v13M15.5 5.5v13"/></svg>
+      <svg class="hero__motion-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12Z"/></svg>
+    </button>
 
     <div class="container hero__inner">
       <div class="hero__content">

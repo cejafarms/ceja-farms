@@ -63,6 +63,64 @@
     }
   });
 
+  /* ------------------------ 2b. Home hero drone loop ------------------------
+     The <source>s ship with data-src, so nothing downloads until we decide
+     the visitor should get motion: not for reduced-motion or data-saver
+     users, where the still photo underneath simply stays. The loop pauses
+     while scrolled out of view, and the button lets anyone stop it.
+  ------------------------------------------------------------------------ */
+  var heroVideo = document.querySelector('.hero__video');
+  var heroMotion = document.querySelector('.hero__motion');
+  if (heroVideo) {
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var conn = navigator.connection;
+    var lean = conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || ''));
+
+    if (!calm && !lean) {
+      var userPaused = false;
+      var inView = true;
+
+      Array.prototype.forEach.call(heroVideo.querySelectorAll('source[data-src]'), function (s) {
+        s.src = s.getAttribute('data-src');
+      });
+      heroVideo.muted = true;   // the attribute alone doesn't satisfy every autoplay policy
+      heroVideo.preload = 'auto';
+      heroVideo.load();
+
+      var sync = function () {
+        if (!userPaused && inView) {
+          var p = heroVideo.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          heroVideo.pause();
+        }
+      };
+
+      heroVideo.addEventListener('playing', function () {
+        heroVideo.classList.add('is-playing');
+        if (heroMotion) heroMotion.hidden = false;
+      });
+
+      if (heroMotion) {
+        heroMotion.addEventListener('click', function () {
+          userPaused = !userPaused;
+          heroMotion.classList.toggle('is-paused', userPaused);
+          heroMotion.setAttribute('aria-label', userPaused ? 'Play background video' : 'Pause background video');
+          sync();
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          inView = entries[0].isIntersecting;
+          sync();
+        }).observe(heroVideo);
+      }
+
+      sync();
+    }
+  }
+
   /* ---------------------------- 3. Footer year ---------------------------- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
