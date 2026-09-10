@@ -2268,7 +2268,7 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
       rgba(244, 241, 234, .35) 100%
     );
   }
-  .hero__content { max-width: none; padding: 52px 0 300px; }
+  .hero__content { max-width: none; padding: 52px 0 340px; }
   .hero__title { max-width: none; }
   .hero__lede { max-width: 46ch; }
 
@@ -2309,7 +2309,7 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
 
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { justify-content: center; }
-  .hero__content { padding-bottom: 240px; }
+  .hero__content { padding-bottom: 280px; }
   .hero__media { height: 280px; }
   .hero__scrim {
     background: linear-gradient(
@@ -2363,14 +2363,16 @@ a.info-card__row:hover .info-card__value { color: var(--gold); }
   .why__item:nth-child(3n + 1) { border-left: 1px solid var(--line); }
   .why__item:nth-child(2n + 1) { border-left: 0; }
 
-  .page-hero__content { padding: 46px 0 210px; }
+  /* Same treatment as the home hero: the photo becomes a clear band under
+     the copy instead of a washed-out layer behind it. */
+  .page-hero__content { padding: 46px 0 250px; }
+  .page-hero__media { top: auto; height: 250px; }
   .page-hero__scrim {
     background: linear-gradient(
       180deg,
       var(--cream) 0%,
-      rgba(244, 241, 234, .95) 44%,
-      rgba(244, 241, 234, .7) 72%,
-      rgba(244, 241, 234, .32) 100%
+      var(--cream) calc(100% - 250px),
+      rgba(244, 241, 234, 0) calc(100% - 170px)
     );
   }
 
